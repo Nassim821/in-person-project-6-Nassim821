@@ -613,3 +613,61 @@ a:hover {
         grid-template-columns: 1fr;
     }
 }
+
+/* ===== Personal additions ===== */
+
+/* The hamburger is a real <button> now, so strip the default button look */
+.nav-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+/* Project links sit in the card body (no image overlay), so they need the
+   primary color instead of white */
+.project-content .project-link {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    margin: 0 0 var(--spacing-sm);
+    font-size: 0.9rem;
+}
+
+.project-content .project-link:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* Tier 1: "Showing 3 of 6 projects" */
+.filter-count {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* About: a small caps label in front of each detail line */
+.detail-label {
+    display: inline-block;
+    min-width: 6.5rem;
+    margin-right: var(--spacing-xs);
+    color: var(--text-light);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* Mobile: keep the hamburger on the first line next to the name, and let the
+   open menu drop onto its own line underneath */
+@media (max-width: 768px) {
+    .nav-toggle {
+        order: 2;
+    }
+
+    .nav-menu {
+        order: 3;
+    }
+}
+
+/* Smooth-scroll targets stop below the sticky navbar instead of under it */
+section {
+    scroll-margin-top: 70px;
+}
